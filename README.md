@@ -11,11 +11,13 @@ This is a bug test where we evaluate your ability to resolve bugs based on conso
 
 ## Good luck!
 
+## Compiler Detected Errors
+
 1. The folder `srce` should be renamed to `src`. When run `npm run start`, the react script finds the `index.js` file in `src` folder.
-2. The compiler detects incorrect syntax in Footer.js. Look up on Footer.js and find typo 'extend'
-3. The compiler detects incorrect import 'Navbar.js' in App.js.
-4. The compiler detects 'Invalid left-hand side in assignment expression' in NavBar.js
-5. The compiler detects 'Can't resolve 'react-bootstrap' in containers => missing react-bootstrap dependency. Run `npm i react-bootstrap`
-6. 'Glyphicon' is not exported from 'react-bootstrap'. React-boopstrap doesn't include Glyphicon anymore. Need to manually import in the `index.html` file
+2. incorrect syntax in Footer.js. => typo 'extend'
+3. incorrect import 'Navbar.js' in App.js.
+4. 'Invalid left-hand side in assignment expression' in NavBar.js => missing state
+5. 'Can't resolve 'react-bootstrap' in containers => missing react-bootstrap dependency. Run `npm i react-bootstrap`
+6. 'Glyphicon' is not exported from 'react-bootstrap'. React-boopstrap doesn't support Glyphicon anymore. => Need to import bootstrap.min.js stylesheet in the `index.html` file and change Glyphicon -> span
 7. 'LoginForm' is not defined => need to import LoginForm in App.js
 8. Can't resolve "bootstrap/dist/css/bootstrap-theme.css" => downgrade to bootstrap v3 since v4 no longer supports bootstrap-theme

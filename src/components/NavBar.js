@@ -15,22 +15,19 @@ class Navbar extends Component {
   }
 
   render() {
-    let sessionButton;
-    if (this.state.showLogoutButton === true) {
-      sessionButton = (
-        <button
-          className="flat-button border-gray"
-          onClick={this.props.handleLogout}
-        >
-          Sign Out
-        </button>
-      );
-    }
     return (
       <div className="app-navbar">
         <div className="flex-container">
           <div className="header">React Debug App</div>
-          {sessionButton}
+          {/* remove let sessionButton and do the following to get a cleaner code */}
+          {this.state.showLogoutButton && (
+            <button
+              className="flat-button border-gray"
+              onClick={this.props.handleLogout}
+            >
+              Sign Out
+            </button>
+          )}
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Form, FormGroup, FormControl, Glyphicon } from "react-bootstrap";
+import { Col, Form, FormGroup, FormControl } from "react-bootstrap";
 import "../styles/App.css";
 
 class LoginForm extends Component {
@@ -50,7 +50,10 @@ class LoginForm extends Component {
                   onClick={this.props.handleLogin}
                 >
                   Next
-                  {/* <Glyphicon className='pl2x' glyph='menu-right' /> */}
+                  <span
+                    class="glyphicon glyphicon-menu-right"
+                    className="pl2x"
+                  ></span>
                 </button>
               </Col>
             </FormGroup>

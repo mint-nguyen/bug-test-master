@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navbar from "../components/NavBar"; //wrong import, the file name was 'navbar.js' To make it consistent, change 'navbar.js' to 'NavBar.js'
 import Footer from "../components/Footer";
 import LoginForm from "../components/LoginForm";
-import { Glyphicon } from "react-bootstrap";
 import "../styles/App.css";
 
 class App extends Component {
@@ -13,8 +12,11 @@ class App extends Component {
       showLoginForm: true,
       showCheckmark: false,
     };
+
     this.handleLogout = this.handleLogout.bind(this);
     this.handleLogin = this.handleLogin.bind(this); //bind handleLogin function
+    this.toggleLogin = this.toggleLogin.bind(this);
+    this.toggleGreatWork = this.toggleGreatWork.bind(this);
   }
 
   handleLogin() {
@@ -33,19 +35,25 @@ class App extends Component {
     });
   }
 
+  toggleLogin(state) {
+    return state.showLoginForm === true ? "" : "hide";
+  }
+
+  toggleGreatWork(state) {
+    return state.showCheckmark === true ? "text-center mt9x" : "hide";
+  }
+
   render() {
     return (
       <div className="app">
         <Navbar ref="navbutton" handleLogout={this.handleLogout} />
-        <div className={this.state.showLoginForm === true ? "" : "hide"}>
+        <div className={this.toggleLogin(this.state)}>
+          {/* avoid inline function */}
           <LoginForm handleLogin={this.handleLogin} />
         </div>
-        <div
-          className={
-            this.state.showCheckmark === true ? "text-center mt9x" : "hide"
-          }
-        >
-          {/* <Glyphicon glyph="glyphicon glyphicon-ok-sign" /> */}
+        <div className={this.toggleGreatWork(this.state)}>
+          <span class="glyphicon glyphicon-ok-sign"></span>
+          {/* Glyphicol not supportted, used span instead */}
           <h2>Great work!</h2>
         </div>
         <Footer />
