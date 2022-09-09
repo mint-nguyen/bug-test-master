@@ -21,3 +21,7 @@ This is a bug test where we evaluate your ability to resolve bugs based on conso
 6. 'Glyphicon' is not exported from 'react-bootstrap'. React-boopstrap doesn't support Glyphicon anymore. => Need to import bootstrap.min.js stylesheet in the `index.html` file and change Glyphicon -> span
 7. 'LoginForm' is not defined => need to import LoginForm in App.js
 8. Can't resolve "bootstrap/dist/css/bootstrap-theme.css" => downgrade to bootstrap v3 since v4 no longer supports bootstrap-theme
+
+## How to run
+1. npm install
+2. npm run start
